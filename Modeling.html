@@ -5,130 +5,108 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Generic - Solid State by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
-	<body>
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+<head>
+	<title>Burst Your Bubble - Models</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="icon" href="images/bybwhitelogo.png" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+</head>
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html">Solid State</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+<body>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-								<li><a href="#">Log In</a></li>
-								<li><a href="#">Sign Up</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
 
-				<!-- Wrapper -->
-					<section id="wrapper">
-						<header>
-							<div class="inner">
-								<h2>User and Article Modeling</h2>
-								<p>In the modeling section, we will mainly focus on following questions. First, how can we represent user political stance given user responses to articles? Next, How can we show the recent user response changes?  Last, How can we determine the articles political stance? </p>
-							</div>
-						</header>
+		<!-- Header -->
+		<header id="header">
+			<h1><a href="index.html">Burst Your Bubble</a></h1>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
 
-						<!-- Content -->
-							<div class="wrapper">
-								<div class="inner">
-									<h3 class="major">User Model</h3>
-									<p>The first step is to set direction such that Negative = Left/0 = Center/Positive = Right. Next, we define a score change according to all possible conditions show in this table. For example, if a user agrees with Left leaning article, the score change will be negative. Most importantly, when a user agrees with Center article, the score change will move towards 0. In the end, the total score is the sum of all Score Changes and each change value is the article score(see Article Model for more detail). However, we can not just use the total score to represent the political stance, since those users who read more will get larger score. So we use Global User Score, which is simply Total Score / Length of Total Responses, to represent the overall user stance. </p>
-									<a href="table1" class="image"><img src="images/User.jpg" alt="" style="width:600px;height:400px;" /></a>
-									<h3 class="major">Article Model</h3>
-									<p>Once we have the user score, we now consider how to model the article bias using numerical value. The first thought is easy, we just use number to represent the classification result -- namely 1 for Right / 0 for Center/ -1 for Left. But that is not enough, here is the reason: Recall we have a text classifier with 85% accuracy, it sounds good at first but if you do the math, this means one of seventh of our prediction labels are wrong, which is not ideal. Moreover, if we take a close look at the baseline, we found out that the prediction accuracy of Center Article is much lower than other categories. Which kind of makes sounds -- even for us, it is a hard task too.  how can we classify center article, given that we all have our own bias. How can we deal with these problems? Besides the classifier score, we introduced a new term User Rating that takes accounts of the user responses. Here, only the experienced users with Response History bigger than 10 can affect the user rating, because the new user has not form a clear stance yet as their scores may be jumping round at the early stage. We then combine the User Rating with classifier score to produce the Article Score. Moreover, this helps us to classify Center article too, as we believe the “Center” articles should have roughly same number of agree and disagree  from both sides of users. To be more specific, the formula is User Rating += User Score * 0.1 * Response, as also shown in this table below. For example, a user with negative score agrees with a article, the user rating of this article will decrease.  Right now, the weight of classifier score and user rating are the same, namely 1.  In the future, as we have more users, we can increase the weight of User Rating and rely more on the response of users. Moreover, we can use those articles with User Rating as dataset to fine-tune the classifier. Eventually, we will have better and better results. </p>
-									<a href="table1" class="image"><img src="images/Article.jpg" alt="" style="width:600px;height:400px;" /></a>
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Sed feugiat lorem</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Nisl placerat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-									</section>
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Generic</a></li>
+					<li><a href="elements.html">Elements</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
 
-								</div>
-							</div>
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>User and Article Modeling</h2>
+					<p>In the modeling section, we will mainly focus on following questions. First, how can we represent
+						user political stance given user responses to articles? Next, How can we show the recent user
+						response changes? Last, How can we determine the articles political stance? </p>
+				</div>
+			</header>
 
-					</section>
-
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-							<form method="post" action="#">
-								<div class="field">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" />
-								</div>
-								<div class="field">
-									<label for="email">Email</label>
-									<input type="email" name="email" id="email" />
-								</div>
-								<div class="field">
-									<label for="message">Message</label>
-									<textarea name="message" id="message" rows="4"></textarea>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="fa-home">
-									Untitled Inc<br />
-									1234 Somewhere Road Suite #2894<br />
-									Nashville, TN 00000-0000
-								</li>
-								<li class="fa-phone">(000) 000-0000</li>
-								<li class="fa-envelope"><a href="#">information@untitled.tld</a></li>
-								<li class="fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-								<li class="fa-facebook"><a href="#">facebook.com/untitled-tld</a></li>
-								<li class="fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
-
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h3 class="major">User Model</h3>
+					<p>The first step is to set direction such that Negative = Left/0 = Center/Positive = Right. Next,
+						we define a score change according to all possible conditions show in this table. For example,
+						if a user agrees with Left leaning article, the score change will be negative. Most importantly,
+						when a user agrees with Center article, the score change will move towards 0. In the end, the
+						total score is the sum of all Score Changes and each change value is the article score(see
+						Article Model for more detail). However, we can not just use the total score to represent the
+						political stance, since those users who read more will get larger score. So we use Global User
+						Score, which is simply Total Score / Length of Total Responses, to represent the overall user
+						stance. </p>
+					<a href="table1" class="image"><img src="images/User.jpg" alt=""
+							style="width:600px;height:400px;" /></a>
+					<h3 class="major">Article Model</h3>
+					<p>Once we have the user score, we now consider how to model the article bias using numerical value.
+						The first thought is easy, we just use number to represent the classification result -- namely 1
+						for Right / 0 for Center/ -1 for Left. But that is not enough, here is the reason: Recall we
+						have a text classifier with 85% accuracy, it sounds good at first but if you do the math, this
+						means one of seventh of our prediction labels are wrong, which is not ideal. Moreover, if we
+						take a close look at the baseline, we found out that the prediction accuracy of Center Article
+						is much lower than other categories. Which kind of makes sounds -- even for us, it is a hard
+						task too. how can we classify center article, given that we all have our own bias. How can we
+						deal with these problems? Besides the classifier score, we introduced a new term User Rating
+						that takes accounts of the user responses. Here, only the experienced users with Response
+						History bigger than 10 can affect the user rating, because the new user has not form a clear
+						stance yet as their scores may be jumping round at the early stage. We then combine the User
+						Rating with classifier score to produce the Article Score. Moreover, this helps us to classify
+						Center article too, as we believe the “Center” articles should have roughly same number of agree
+						and disagree from both sides of users. To be more specific, the formula is User Rating += User
+						Score * 0.1 * Response, as also shown in this table below. For example, a user with negative
+						score agrees with a article, the user rating of this article will decrease. Right now, the
+						weight of classifier score and user rating are the same, namely 1. In the future, as we have
+						more users, we can increase the weight of User Rating and rely more on the response of users.
+						Moreover, we can use those articles with User Rating as dataset to fine-tune the classifier.
+						Eventually, we will have better and better results. </p>
+					<a href="table1" class="image"><img src="images/Article.jpg" alt=""
+							style="width:600px;height:400px;" /></a>
+				</div>
 			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+		</section>
+	</div>
 
-	</body>
+	<!-- Scripts -->
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
