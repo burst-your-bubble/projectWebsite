@@ -5,131 +5,135 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>BYB - News Classification</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
-	<body>
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+<head>
+    <title>Burst Your Bubble - Article Classification</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+</head>
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html">Burst Your Bubble</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+<body>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-								<li><a href="#">Log In</a></li>
-								<li><a href="#">Sign Up</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
 
-				<!-- Wrapper -->
-					<section id="wrapper">
-						<header>
-							<div class="inner">
-								<h2>News Classification</h2>
-								<p>Machine learning to determine the political stance on online news articles</p>
-							</div>
-						</header>
+		<!-- Header -->
+		<header id="header" class="alt">
+			<h1><a href="index.html">Burst Your Bubble</a></h1>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
 
-						<!-- Content -->
-							<div class="wrapper">
-								<div class="inner">
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="design.html">Design</a></li>
+					<li><a href="index.html">Stack and Infrastructure</a></li>
+					<li><a href="classification.html">Article Classification</a></li>
+					<li><a href="Modeling.html">User and Article Modeling</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
 
-									<h3 class="major">scikit-learn</h3>
-									<p>
-                                        We used the Python <a href="https://scikit-learn.org/">scikit-learn</a> package to create a 
-                                        machine learning model to classify the political stances of news articles as eiher Left, Right,
-                                        or Center-leaning.
-                                    </p>
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>News Classification</h2>
+					<p>Machine learning to determine the political stance on online news articles</p>
+				</div>
+			</header>
 
-									<p>
-                                        We used the <code>TfidfTransformer</code> to extract <a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">TF-IDF</a>
-                                        features from our article text data,
-                                        and trained several of sklearn's built in models including <code>LinearSVC</code>, 
-                                        <code>MLPClassifier</code>, and <code>RandomForestClassifier</code>. We ended up using
-                                        the <code>LinearSVC</code> model because it gave us the best performace, with the following
-                                        evaluation metrics.
-                                    </p>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
 
-                                    <table style="width: 50%;">
-                                        <thead>
-                                            <tr>
-                                                <th>Label</th>
-                                                <th>Recall</th>
-                                                <th>Precision</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>L</td>
-                                                <td>0.83</td>
-                                                <td>0.90</td>
-                                            </tr>
-                                            <tr>
-                                                <td>C</td>
-                                                <td>0.87</td>
-                                                <td>0.85</td>
-                                            </tr>
-                                            <tr>
-                                                <td>R</td>
-                                                <td>0.92</td>
-                                                <td>0.82</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+					<h3 class="major">scikit-learn</h3>
+					<p>
+						We used the Python <a href="https://scikit-learn.org/">scikit-learn</a> package to create a
+						machine learning model to classify the political stances of news articles as eiher Left, Right,
+						or Center-leaning.
+					</p>
 
-									<h3 class="major">Allsides.com</h3>
-									<p>
-                                        The dataset we used to train our models was gathered from a website
-                                        called <a href="http://allsides.com">allsides.com</a>. Allsides provides
-                                        readers with different news articles from accross the political spectrum,
-                                        so we were able to scrape the text from almost 40,000 articles along with
-                                        their political stance labels in order to train our supervised machine
-                                        learning models.
-                                    </p>
+					<p>
+						We used the <code>TfidfTransformer</code> to extract <a
+							href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">TF-IDF</a>
+						features from our article text data,
+						and trained several of sklearn's built in models including <code>LinearSVC</code>,
+						<code>MLPClassifier</code>, and <code>RandomForestClassifier</code>. We ended up using
+						the <code>LinearSVC</code> model because it gave us the best performace, with the following
+						evaluation metrics.
+					</p>
 
-                                    <h3 class="major">Deep Learning</h3>
-                                    <p>
-                                        We also experimented with a few more advanced deep learning
-                                        models including Google's <a href="https://github.com/google-research/bert">BERT model</a>. 
-                                        However, we decided not to
-                                        go with these models as they acheived similar performace to the 
-                                        sklearn classifiers, but were far more computationally expensive.
-                                    </p>
-								</div>
-							</div>
+					<table style="width: 50%;">
+						<thead>
+							<tr>
+								<th>Label</th>
+								<th>Recall</th>
+								<th>Precision</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>L</td>
+								<td>0.83</td>
+								<td>0.90</td>
+							</tr>
+							<tr>
+								<td>C</td>
+								<td>0.87</td>
+								<td>0.85</td>
+							</tr>
+							<tr>
+								<td>R</td>
+								<td>0.92</td>
+								<td>0.82</td>
+							</tr>
+						</tbody>
+					</table>
 
-					</section>
+					<h3 class="major">Allsides.com</h3>
+					<p>
+						The dataset we used to train our models was gathered from a website
+						called <a href="http://allsides.com">allsides.com</a>. Allsides provides
+						readers with different news articles from accross the political spectrum,
+						so we were able to scrape the text from almost 40,000 articles along with
+						their political stance labels in order to train our supervised machine
+						learning models.
+					</p>
 
+					<h3 class="major">Deep Learning</h3>
+					<p>
+						We also experimented with a few more advanced deep learning
+						models including Google's <a href="https://github.com/google-research/bert">BERT model</a>.
+						However, we decided not to
+						go with these models as they acheived similar performace to the
+						sklearn classifiers, but were far more computationally expensive.
+					</p>
+				</div>
 			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+		</section>
 
-	</body>
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>

@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Burst Your Bubble - Design</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="images/bybwhitelogo.png" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+</head>
+
+<body>
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        		<!-- Header -->
+		<header id="header" class="alt">
+			<h1><a href="index.html">Burst Your Bubble - Design</a></h1>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="design.html">Design</a></li>
+					<li><a href="index.html">Stack and Infrastructure</a></li>
+					<li><a href="classification.html">Article Classification</a></li>
+					<li><a href="Modeling.html">User and Article Modeling</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+        <!-- Wrapper -->
+        <section id="wrapper">
+            <header>
+                <div class="inner">
+                    <h2>Design</h2>
+                    <p>The design process for this project was extremely iterative. We used a classic HCI design cycle model to inform our process and took the project from discovery phase to evaluation.</p>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="wrapper">
+                <div class="inner">
+                    <h3 class="major">Discovery - User Interviews</h3>
+                    <p>
+                        <img src="images/userInterviews.png" style="width: 100%; padding: 2%" />
+                        <b>Participants:</b> Ankit Sanghi '21, Asha Penprase '21, Isaac Hasley '19, Hashir Safdar '22
+                        <br>
+
+                        <b>Goal:</b> Understand the considerations and processes a person goes through to hear about a news topic, learn about it and form an opinion around it.<br><br>
+
+                        <b>Hypothesis:</b><br>
+                        <b>H1:</b> Given a better representation of opinions in their search for news, users would find it easier to form an informed stance on political topics.<br>
+                        <b>H2:</b> Given the lack of an opinion source, users could be more open reading an argument that doesn’t align with their perspective.<br><br>
+
+                        <a target="_blank" href="https://github.com/burst-your-bubble/App/wiki/User-Interviews" class="special">User Interview Detailed Transcript</a>
+
+                        <b>Outcomes:</b> By interviewing our 4 candidates, we learnt more about their process of gathering information, specifically for news, and began to undestand the pain points they had in trying to broaden their perspectives. This understanding lead to the formation of the following User Journey Map:<br>
+                        <img src="images/userJourney.png" style="width: 100%; padding: 2%" />
+                    </p>
+
+                    <h3 class="major">Design - Content Flow</h3>
+                    <p>
+                        In order to mimic the user mental model and journey, we established a content flow chart that informed how information was going to be organized in our system and what the user paths would be. <br>
+                        <img src="images/contentFlow.png" style="width: 100%; padding: 2%"/>
+                    </p>
+
+                    <h3 class="major">Prototype - Wireframes</h3>
+                    <p>
+                        As visible in the journey map, the most difficult aspects of reading the news are steps 4 (choosing a reliable source of information) and 6 (deciding whether or not to read more). We decided to create a low-fedility prototype to further test a flow that makes these two steps easier.<br><br>
+
+                        <b>Version 1 (Low-Fedility)</b><br>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/N0rkrK4XRpU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+                        This prototype was presented to a few team members and other user testers for a design critique. Since this was a low-fedility prototype, the feedback was primarily on the content flow and general representation of Topics and Articles.<br><br>
+
+                        <a target="_blank" href="https://github.com/burst-your-bubble/App/wiki/Design-Critique" class="special">Full Feedback</a>
+
+                        <b>Version 2 (High-Fedility T Prototype)</b><br>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/_7RGnEwlskw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+                        This version of our prototype ended up becoming the interface we eventually implemented. The feedback from the previous session informed the design choices made here.
+                    </p>
+
+                    <h3 class="major">Evaluate - User Testing</h3>
+                    <p>
+                        After fully implementing our web application, we did a couple of rounds of user testing. The first round was a more ad-hoc approach where we just emailed the interface to friends and family and saw their initial reactions to our work. The goal here was mostly bug bashing and getting high level usability feedback. Two major outcomes of this step:<br><br>
+                        <img src="images/UTQuizPage.png" style="width: 100%;"/><br>
+                        <img src="images/UTNoContext.png" style="width: 100%;"/><br><br>
+                        The added quiz step in our content flow was being redundant and causing users to waste a lot of time on a topic they didn't really care about and our onboarding flow provided no context to a user who's new to the project.<br><br>
+                        
+                        After addressing some of the more critical bugs and feedback we got, we returned to our original user testers, Hashir, Asha, Ankit, and Isaac, to conduct a more detailed round of user testing, consisting of task based tests and more general exploratory tests.<br><br>
+
+                        <b>Goal:</b> Discover usability issues and measure the value of Burst Your Bubble<br><br>
+
+                        <b>Hypothesis:</b><br>
+                        <b>H1:</b> Given a curated list of topics to discover on any given day, users can develop a more informed stance on political topics.<br>
+                        <b>H2:</b> Given the lack or obfuscation of a news source, users would be willing to read opinions that don’t necessarily align with their own.<br><br>
+                        
+                        <a target="_blank" href="https://github.com/burst-your-bubble/App/wiki/User-Testing" class="special">Usability Testing Detailed Transcript</a>
+
+                        <b>Outcomes:</b> Via this detailed round of user testing, we found that the initial success criteria (H1 and H2) set for the interface was accomplished. There were still ways we could better the interface but in terms of usability and content, our interface met the expected standards. Additionally, each tester was give the chance to have a long form discussion on each of our hypothesis and they all came to the conclusion that given an interface like ours, their news reading habits would include more news from across the political spectrum.<br>
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
