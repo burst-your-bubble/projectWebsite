@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Burst Your Bubble - Stack &amp; Infrastructure</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="images/bybwhitelogo.png" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+</head>
+
+<body>
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        		<!-- Header -->
+		<header id="header" class="alt">
+			<h1><a href="index.html">Burst Your Bubble - Design</a></h1>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="design.html">Design</a></li>
+					<li><a href="stack.html">Stack and Infrastructure</a></li>
+					<li><a href="classification.html">Article Classification</a></li>
+					<li><a href="Modeling.html">User and Article Modeling</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+        <!-- Wrapper -->
+        <section id="wrapper">
+            <header>
+                <div class="inner">
+                    <h2>Stack &amp; Infrastructure</h2>
+                    <p>We used a variety of technologies to build <em>Burst Your Bubble</em>, including frameworks we had familiarity with, and some that we wanted to learn.</p>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="wrapper">
+                <div class="inner">
+                    <h3 class="major">The stack</h3>
+                    <p>
+                        It was important for us to allow our web application to communicate easily with our machine learning models and the database. Because our <a href="classification.html">article classification</a> was being done in Python with the <code>sklearn</code> framework, we built the backend in Python as a Flask application. Flask also allows us to create an API with very little overhead, while still supporting crucial web technologies like session data and cookies, which we need for user authentication.
+                    </p>
+                    <p>
+                        We then stored the data required for the web app in a MySQL database. We decided to use a relational database like MySQL so that we can easily traverse the objects we are creating and using (for instance, going from a user to the list of articles they have read). Additionally, this allowed us to use a popular Object-Relational Mapping (ORM) package to abstract away from the database engine; in this case, Python's <code>SQLAlchemy</code> package provided that connection.
+                    </p>
+                    <p>
+                        On the front end, we built the application using <a href="https://reactjs.org">React</a>. React is a popular user interface framework that reduces the application down to reusable components, which is extremely useful for complex applications like ours that have UI items that need to be used in several locations. Prior to the development phase of the project none of us were familiar with React, but we wanted to learn how to develop user interfaces with it.
+                    </p>
+                    <h3 class="major">Amazon Web Services</h3>
+                    <p>
+                        We also wanted to gain experience with cloud deployments. While the project can be run fully locally with the built-in Flask server, we wanted to set up a production environment where we could all interact with the app and know we were all using the same code, underlying operating system, packages, and database. We set up an account on the Amazon Web Services free tier and set up the following services:
+                    </p>
+                    <ul>
+                        <li><strong>Elastic Compute Cloud (EC2):</strong> The actual server that runs our code and a cron task that runs daily to fetch fresh news articles.</li>
+                        <li><strong>Relational Database Service (RDS):</strong> Optimized MySQL with higher performance than what we would see if we were to install MySQL on our EC2 instance.</li>
+                        <li><strong>Identity and Access Management (IAM):</strong> Security controls that allow AWS resources to communicate with each other, and with the public internet.</li>
+                    </ul>
+                    <p>
+                        We also wanted to decentralize our deployment process and allow anyone in our team to deploy code to production. We set up additional AWS services to enable automatic code deployments whenever we push to GitHub:
+                    </p>
+                    <ul>
+                        <li><strong>CodeDeploy:</strong> Continuous deployment manager; receives code and installs it on our EC2 instance.</li>
+                        <li><strong>CodePipeline:</strong> Watches GitHub for changes and automatically triggers a deployment with CodeDeploy whenever new code is pushed to <code>master</code>.</li>
+                        <li><strong>Simple Storage Service (S3):</strong> Temporary storage of code archives.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
